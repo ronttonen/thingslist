@@ -1,0 +1,7 @@
+*.sqlite3
+*.sqlite
+
+.komodo*
+
+things/migrations
+craigslistforthings/settings_secret.py

@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>ThingsList!</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/basestyle.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <script src="{% static 'js/csrf.js' %}"></script>
+        <script src="{% static 'js/base.js' %}"></script>
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <div class="nav-wrapper blue">   
+                    <a href="/" class="brand-logo logo-offset">ThingsList!</a>
+                </div>
+            </nav>
+            
+        {% block content %}
+        {% endblock %}
+        </div>
+        <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    </body>
+</html>

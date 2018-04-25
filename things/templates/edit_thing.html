@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="modal-success" class="modal green lighten-2">
+    <div class="modal-content green lighten-2">
+      <h4 class="center-align">Changes Saved!</h4>
+    </div>
+    <div class="modal-footer green lighten-2">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat green lighten-2">OK!</a>
+    </div>
+  </div>
+<div id="modal-failure" class="modal red lighten-2">
+    <div class="modal-content red lighten-2">
+      <h4 class="center-align">Something Went Wrong! Please Try Again.</h4>
+    </div>
+    <div class="modal-footer red lighten-2">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat red lighten-2">OK!</a>
+    </div>
+  </div>
+<div class="row">
+    <div class="col s12">
+            <div class="row">         
+                <h4 class="col s12">{{ thing.title }}</h4>
+            </div>
+            <div class="row">
+                <h6 class="col s12">Description:</h6>
+                <p class="col s12">{{ thing.description }}</p>
+            </div>
+    </div>
+
+
+    <div class="row">
+        <form method="post" class="col s12">
+            {% csrf_token %}
+            <input type="hidden" value="{{ thing.slug }}" name="slug">
+            <button class="btn waves-effect waves-light red">Delete Thing</button>
+        </form>
+    </div>
+    <div class="divider"></div>
+</div>
+
+<div class="row">
+    <h4 class="col s 12">Edit Your Thing</h4>
+</div>
+
+<div class="row">
+    <form class="col s12">
+        <div class="row">
+            <div class="input-field col s6">
+                {{ form.title }}
+                <label for="{{ form.title.label }}">Title</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                {{ form.description }}
+                <label for="{{ form.description.label }}">Description</label>
+            </div>
+            <div class="input-field input-btn-inline col s12">
+                <button class="btn waves-effect waves-light blue" onclick="editThing(event);">Save Changes!
+                <i class="material-icons left">cloud</i></button>
+            </div>
+            
+        </div>
+    </form>
+</div>
+{% load static %}
+<script>
+    $('input[name="title"]').val('{{ thing.title }}')
+    $('textarea[name="description"]').val('{{ thing.description }}')
+    $('input[name="author_email"]').val('{{ thing.author_email }}')
+</script>
+<script src="{% static 'js/ajax.js' %}"></script>
+{% endblock %}
