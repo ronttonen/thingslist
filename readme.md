@@ -1,4 +1,4 @@
-#####Instructions
+###### Instructions
 *The main page will display all the Things, sorted by last edit time <br />
 A page to create a Thing <br />
 A page to edit a Thing (+ button to remove) <br />
@@ -18,7 +18,7 @@ Using the Generic Django Class-Based View is recommended, but this is not a requ
 You can use Bootstrap or Materialize.css or anything to make it look at least presentable <br />
 Tests are not necessary, but are a pre<br />* 
 
-#####Create Django App: <br />
+###### Create Django App: <br />
 python3 -m venv virtenv <br />
  . virtenv/bin/activate <br />
 pip install --upgrade pip <br />
@@ -27,16 +27,16 @@ django-admin startproject craigslistforthings <br />
 cd craigslistforthings <br />
 python manage.py startapp things <br />
 
-#####DBMigrations: <br />
+###### DBMigrations: <br />
 python manage.py makemigrations <br />
 python manage.py migrate <br />
 
-#####Install To Project: <br />
+###### Install To Project: <br />
 To add this app to a project: <br />
 In urls.py add url(r'^things/', include('things.urls')) <br />
 In settings.py add 'things' in INSTALLED_APPS <br />
 
-#####Deployment (pythonanywhere): <br />
+###### Deployment (pythonanywhere): <br />
 in Bash: <br />
 git clone https://github.com/ronttonen/thingslist.git <br />
 mkvirtualenv --python=/usr/bin/python3.4 thingslist-virtualenv <br />
