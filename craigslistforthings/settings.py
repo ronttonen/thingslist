@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-from settings_secret import *
+from craigslistforthings.settings_secret import *
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'cragislistforthings.urls'
+ROOT_URLCONF = 'craigslistforthings.urls'
 
 TEMPLATES = [
     {
@@ -79,7 +79,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'cragislistforthings.wsgi.application'
+WSGI_APPLICATION = 'craigslistforthings.wsgi.application'
 
 
 # Database

@@ -12,9 +12,10 @@ function getCookie(name) {
     }
     return cookieValue;
 }
+$(document).ready(function(){
 var csrftoken = getCookie('csrftoken');
 
-$(document).ready(function(){
+
     $(function () {
     $.ajaxSetup({
         headers: { "X-CSRFToken": csrftoken }

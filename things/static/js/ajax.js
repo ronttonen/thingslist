@@ -6,18 +6,18 @@ $(document).ready(function(){
             alert('Form submission failed please fill form corectly again.')
         },
         success: function(res) {
-            console.log(res['error'])
-            if (res['error'] == 'none') {
                 $('#modal-success').modal();
                 $('#modal-success').modal('open');
-                $('input[name="title"]').val('')
-                $('textarea[name="description"]').val('')
-                $('input[name="author_email"]').val('')
-                document.activeElement.blur();
-            } else {
-                $('#modal-error').modal();
-                $('#modal-error').modal('open');
-            }
+                if(res.edit == 'false') {
+                    $('input[name="title"]').val('');
+                    $('textarea[name="description"]').val('');
+                    $('input[name="author_email"]').val('');
+                    document.activeElement.blur();
+                }
+        },
+        error: function(err) {
+            $('#modal-failure').modal();
+            $('#modal-failure').modal('open');
         }
     });
 });
