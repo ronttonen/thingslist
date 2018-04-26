@@ -19,6 +19,7 @@ You can use Bootstrap or Materialize.css or anything to make it look at least pr
 Tests are not necessary, but are a pre<br />* 
 
 ###### Create Django App: <br />
+sudo apt install python3-venv <br />
 python3 -m venv virtenv <br />
  . virtenv/bin/activate <br />
 pip install --upgrade pip <br />
